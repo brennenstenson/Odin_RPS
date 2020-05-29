@@ -44,11 +44,13 @@
             case 3:
             compPlay = "scissors";
             scissorsStyle();
-          }
-        return compPlay;
+          }         
+            return compPlay;
+          } else {
+            alert('Please pick an option.');
         }
       }
-      
+
   function oneGame (playerSelection, computerSelection) {
     let arr2 = ["rock", "paper", "scissors", "rock"];
     for (let i = 0; i < arr2.length; i++) {
