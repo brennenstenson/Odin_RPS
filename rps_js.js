@@ -34,6 +34,7 @@
        }
      }
     }
+	document.getElementById("compPickPhoto").style.visibility = "visible";
     results.appendChild(gameResult);
  }
 
