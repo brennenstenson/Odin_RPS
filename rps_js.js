@@ -15,6 +15,12 @@
    }
 */
 
+  function noStyle () {
+    compPick.style.width = '100%';
+    compPick.style.margin = 'auto';
+    compPick.style.objectPosition = '50%';
+  }  
+
    function rockStyle () {
     compPick.style.objectPosition = "11%";
     compPick.style.width = '75px';
@@ -80,11 +86,20 @@
   gameResult.style.fontWeight = 'bold'
 
   const rock = document.querySelector('#rock');
-  rock.addEventListener('click', () => choice("rock"));
+  rock.addEventListener('click', () => {
+    choice("rock");
+    noStyle();
+  });
   const paper = document.querySelector('#paper');
-  paper.addEventListener('click', () => choice("paper"));
+  paper.addEventListener('click', () => {
+    choice("paper")
+    noStyle();
+  });
   const scissors = document.querySelector('#scissors');
-  scissors.addEventListener('click', () => choice("scissors"));
+  scissors.addEventListener('click', () => {
+    choice("scissors")
+    noStyle();
+  });
   
 
   const play = document.querySelector('#play');
