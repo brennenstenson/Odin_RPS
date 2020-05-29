@@ -1,0 +1,161 @@
+html {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-image: linear-gradient(50deg, rgb(88, 231, 236, .9), rgb(253, 127, 253, .6));
+}
+
+#container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+header {
+    z-index: 100;
+    position: static;
+    margin-left: 0;
+    padding: 0;
+    width: 100%;
+    height: 100px;
+    background: rgba(143, 248, 129, 0.24);
+    text-align: center;
+    box-shadow: 0px 5px 50px 5px rgb(0, 0, 0, .3);
+}
+
+#title {
+    margin-top: 0;
+    padding-top: 34px;
+    font-size: 2em;
+}
+
+main {
+    width: 100%;
+    margin: auto;
+    margin-top: 55px;
+    align-items: center;
+    text-align: center;
+}
+
+#user_pick {
+    font-size: 1.4em;
+    margin-top: -15px;
+}
+
+.option {
+    display: inline;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+#vs {
+    font-size: 3em;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+button {
+    width: 25%;
+    height: 150px;
+    border-radius: 7px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background: rgb(255, 249, 249);
+    border: none;
+    box-shadow: 0px 12px 25px 5px rgba(43, 43, 43, 0.178);
+}
+
+#play:focus {
+    outline: 0;
+}
+button:hover {
+    transform: scale(1.01);
+}
+#rock:focus {
+    box-shadow: 0px 0px 25px 5px rgb(255, 255, 255);
+    outline-color: black;
+}
+#rock:hover {
+    box-shadow: 0px 0px 25px 5px rgb(255, 255, 255);
+}
+#paper:focus {
+    box-shadow: 0px 0px 25px 5px rgb(255, 255, 255);
+    outline-color: black;
+}
+#paper:hover {
+    box-shadow: 0px 0px 25px 5px rgb(255, 255, 255);
+}
+#scissors:focus {
+    box-shadow: 0px 0px 25px 5px rgb(255, 255, 255);
+    outline-color: black;
+}
+#scissors:hover {
+    box-shadow: 0px 0px 25px 5px rgb(255, 255, 255);
+}
+
+#play {
+    height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 40px;
+}
+
+h4 {
+    margin-top: 25px;
+}
+
+#holder {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+#rock_pic {
+    object-fit: none;
+    height: 95%;
+    width: 75px;
+    object-position: 11%;
+}
+
+#paper_pic {
+    object-fit: none;
+    height: 95%;
+    width: 75px;   
+}
+
+#scissors_pic {
+    object-fit: none;
+    height: 95%;
+    width: 75px;
+    object-position: 89%;
+}
+
+#outcome {
+    background: rgb(255, 249, 249);
+    height: 150px;
+    width: 45%;
+    margin: auto;
+    border-radius: 7px;
+    box-shadow: 0px 0px 25px 5px rgba(43, 43, 43, 0.432);
+    margin-top: -20px;
+}
+
+.results {
+    margin: auto;
+    width: 80%;
+    height: 50px;
+    margin-top: 40px;
+}
+
+#compPickPhoto {
+    object-fit: none;
+    height: 100%;
+}
