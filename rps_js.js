@@ -1,26 +1,54 @@
    const compPick = document.querySelector('#compPickPhoto');
    let random = Math.floor((Math.random()*3) + 1);
+/*
+   function roll () {
+    let photoArr = [rockStyle(), paperStyle(), scissorsStyle()];
+    for (let i = 0; i < photoArr.length; i++) {
+      setTimeout(photoArr[i], 3000);
+    }
+   }
+*/
+   function rockStyle () {
+    compPick.style.objectPosition = "11%";
+    compPick.style.width = '75px';
+   }
+
+   function paperStyle () {
+    compPick.style.width = '75px';
+   }
+
+   function scissorsStyle() {
+    compPick.style.objectPosition = "89%";
+    compPick.style.width = '75px';
+   }
+
+   let RPS;
+   function choice(word) {
+     RPS = word;
+     console.log(RPS)
+     return RPS;
+   }
 
    let computerPlay = function() {
         let compPlay;
+      if (RPS === "rock" || RPS === "paper" || RPS === "scissors") {
         switch (random) {
             case 1:
             compPlay = "rock";
-            compPick.style.objectPosition = "11%";
-            compPick.style.width = '75px';
+            rockStyle();
             break;
             case 2:
-            compPlay = "paper"; 
-            compPick.style.width = '75px';
+            compPlay = "paper";
+            paperStyle(); 
             break;
             case 3:
             compPlay = "scissors";
-            compPick.style.objectPosition = "89%";
-            compPick.style.width = '75px';
+            scissorsStyle();
           }
         return compPlay;
         }
-
+      }
+      
   function oneGame (playerSelection, computerSelection) {
     let arr2 = ["rock", "paper", "scissors", "rock"];
     for (let i = 0; i < arr2.length; i++) {
@@ -51,15 +79,10 @@
   const scissors = document.querySelector('#scissors');
   scissors.addEventListener('click', () => choice("scissors"));
   
-  let RPS;
-  function choice(word) {
-    RPS = word;
-    console.log(RPS)
-    return RPS;
-  }
-  
   const play = document.querySelector('#play');
   play.addEventListener('click', () => oneGame(RPS, computerPlay()));
+
+
 
   /*
 
