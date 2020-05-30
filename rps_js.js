@@ -16,7 +16,7 @@
 */
 
   function noStyle () {
-    compPick.style.width = '100%';
+    compPick.style.width = '95%';
     compPick.style.margin = 'auto';
     compPick.style.objectPosition = '50%';
   }  
@@ -71,17 +71,30 @@
          if (computerSelection == playerSelection) {
            gameResult.textContent = "Tie.";
          } else if (computerSelection == arr2[i + 1]) {
-           gameResult.textContent = "You Lose!";
+           gameResult.textContent = "You Lose!";    
          } else if (computerSelection == arr2[i - 1]){
            gameResult.textContent = "You Win!";
        }
      }
+    } 
+    results.appendChild(gameResult);  
+
+    if (gameResult.textContent === "You Lose!") {
+      roundResult.textContent = "*";
+      computerScore.appendChild(roundResult)
+    } else if (gameResult.textContent === "You Win!") {
+      roundResult.textContent = "*";
+      userScore.appendChild(roundResult)
     }
-    results.appendChild(gameResult);
-  }
+
+}
+
+  const userScore = document.querySelector('#user_score');
+  const computerScore = document.querySelector('#computer_score')
+  const roundResult = document.createElement('p')
 
   const results = document.querySelector('.results');
-  const gameResult = document.createElement('div');
+  const gameResult = document.createElement('p');
   gameResult.style.fontSize = '2em'
   gameResult.style.fontWeight = 'bold'
 
@@ -100,7 +113,8 @@
     choice("scissors")
     noStyle();
   });
-  
 
   const play = document.querySelector('#play');
   play.addEventListener('click', () => oneGame(RPS, computerPlay()));
+
+ 
