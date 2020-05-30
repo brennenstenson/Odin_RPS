@@ -102,8 +102,10 @@ let machineScore = 0;
   function totalCount() {
     if (machineScore == 5) {
       alert("Sorry, you lose");
+	  newMatch();
     } else if (humanScore == 5) {
-      alert("You beat the computer!")
+      alert("You beat the computer!");
+	  newMatch()
     }
   }
 
@@ -134,4 +136,26 @@ let machineScore = 0;
     scoreCount();
     totalCount();
   });
+  
+  const newGame = document.querySelector('#newGame');
+  newGame.addEventListener('click', () => {
+	machineScore = 0;
+	humanScore = 0;
+	roundResult.textContent=0;
+    roundResult1.textContent=0;
+    document.getElementById("newGame").style.visibility = "hidden";
+    document.getElementById("newGame").style.position = "absolute";
+    document.getElementById("play").style.position = "initial";
+    document.getElementById("play").style.visibility = "visible";
+  });
 
+
+  function newMatch() {
+	// reset game //
+    document.getElementById("play").style.visibility = "hidden";
+    document.getElementById("play").style.position = "absolute";
+    document.getElementById("newGame").style.position = "initial";
+
+    document.getElementById("newGame").style.visibility = "visible";
+  }
+	

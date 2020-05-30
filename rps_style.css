@@ -124,6 +124,17 @@ button:hover {
     margin-top: 40px;
 }
 
+#newGame {
+    height: 75px;
+    font-size: 2em;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+	visibility: hidden;
+	position: absolute;
+
+}
+
 h4 {
     margin-top: 19px;
 }
