@@ -6,14 +6,6 @@
    return random;
   }
    console.log(randomFunc())
-/*
-   function roll () {
-    let photoArr = [rockStyle(), paperStyle(), scissorsStyle()];
-    for (let i = 0; i < photoArr.length; i++) {
-      setTimeout(photoArr[i], 3000);
-    }
-   }
-*/
 
   function noStyle () {
     compPick.style.width = '95%';
@@ -64,6 +56,9 @@
         }
       }
 
+let humanScore = 0;
+let machineScore = 0;
+
   function oneGame (playerSelection, computerSelection) {
     let arr2 = ["rock", "paper", "scissors", "rock"];
     for (let i = 0; i < arr2.length; i++) {
@@ -71,32 +66,51 @@
          if (computerSelection == playerSelection) {
            gameResult.textContent = "Tie.";
          } else if (computerSelection == arr2[i + 1]) {
-           gameResult.textContent = "You Lose!";    
+           gameResult.textContent = "You Lose!"; 
+           machineScore += 1;
+           console.log("machine score = " + machineScore)   
          } else if (computerSelection == arr2[i - 1]){
            gameResult.textContent = "You Win!";
+           humanScore += 1;
+           console.log("humanScore is " + humanScore);
        }
      }
     } 
     results.appendChild(gameResult);  
-
-    if (gameResult.textContent === "You Lose!") {
-      roundResult.textContent = "*";
-      computerScore.appendChild(roundResult)
-    } else if (gameResult.textContent === "You Win!") {
-      roundResult.textContent = "*";
-      userScore.appendChild(roundResult)
-    }
-
 }
+
+  function scoreCount() {
+    if (gameResult.textContent === "You Win!") {
+      roundResult1.textContent = `${humanScore}`;
+      userScore.appendChild(roundResult1)
+    } else if (gameResult.textContent === "You Lose!") {
+      roundResult.textContent = `${machineScore}`;
+      computerScore.appendChild(roundResult)
+    }  
+  }
 
   const userScore = document.querySelector('#user_score');
   const computerScore = document.querySelector('#computer_score')
   const roundResult = document.createElement('p')
+  const roundResult1 = document.createElement('p')
+
+  roundResult.textContent = `${machineScore}`;
+  roundResult1.textContent = `${humanScore}`;
+  computerScore.appendChild(roundResult);
+  userScore.appendChild(roundResult1);
+
+  function totalCount() {
+    if (machineScore == 5) {
+      alert("Sorry, you lose");
+    } else if (humanScore == 5) {
+      alert("You beat the computer!")
+    }
+  }
 
   const results = document.querySelector('.results');
   const gameResult = document.createElement('p');
-  gameResult.style.fontSize = '2em'
-  gameResult.style.fontWeight = 'bold'
+  gameResult.style.fontSize = '2em';
+  gameResult.style.fontWeight = 'bold';
 
   const rock = document.querySelector('#rock');
   rock.addEventListener('click', () => {
@@ -115,6 +129,9 @@
   });
 
   const play = document.querySelector('#play');
-  play.addEventListener('click', () => oneGame(RPS, computerPlay()));
+  play.addEventListener('click', () => {
+    oneGame(RPS, computerPlay());
+    scoreCount();
+    totalCount();
+  });
 
- 
